@@ -81,7 +81,7 @@ class graphair(nn.Module):
         self.fc2 = torch.nn.Linear(num_proj_hidden, num_hidden)
 
         self.optimizer_classifier = torch.optim.Adam(self.classifier.parameters(),
-                                                     lr=lr, weight_decay=weight_decay)
+                                                     lr=1e-3, weight_decay=weight_decay)
 
     def projection(self, z):
         z = F.elu(self.fc1(z))
