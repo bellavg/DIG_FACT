@@ -72,8 +72,6 @@ class run():
                                             classifier_model=classifier_model, lr=lr, weight_decay=weight_decay,
                                             alpha=alpha, gamma = gamma, lam = lam,
                                             dataset=dataset_name).to(device)
-                        else:
-                            raise Exception('At this moment, only Graphair is supported!')
 
                         # call fit_whole
                         st_time = time.time()
@@ -85,32 +83,7 @@ class run():
                                 idx_val=dataset.idx_val, idx_test=dataset.idx_test, sens=sens)
                         print(f'alpha = {alpha}, gamma = {gamma}, lambda = {lam}')
 
-        else:    
-
-            # generate model
-            if model == 'Graphair':
-                aug_model = aug_module(features, n_hidden=64, temperature=1).to(device)
-                f_encoder = GCN_Body(in_feats=features.shape[1], n_hidden=64, out_feats=64, dropout=0.1, nlayer=3).to(
-                    device)
-                sens_model = GCN(in_feats=features.shape[1], n_hidden=64, out_feats=64, nclass=1).to(device)
-                classifier_model = Classifier(input_dim=64, hidden_dim=128)
-                model = graphair(aug_model=aug_model, f_encoder=f_encoder, sens_model=sens_model,
-                                classifier_model=classifier_model, lr=lr, weight_decay=weight_decay,
-                                dataset=dataset_name).to(device)
-            else:
-                raise Exception('At this moment, only Graphair is supported!')
-
-            # call fit_whole
-            st_time = time.time()
-            model.fit_whole(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=0, adv_epoches=1)
-            print("Training time: ", time.time() - st_time)
-
-            # Test script
-            model.test(adj=adj, features=features, labels=dataset.labels, epochs=test_epochs, idx_train=dataset.idx_train,
-                    idx_val=dataset.idx_val, idx_test=dataset.idx_test, sens=sens)
-
-
-
+        
 
 # Load the dataset
 nba = NBA()
