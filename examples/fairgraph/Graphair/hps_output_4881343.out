@@ -1,0 +1,41 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius+and+Lisa#SoftwarepolicySnelliusandLisa-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+downloading raw files from: https://github.com/divelab/DIG_storage/raw/main/fairgraph/datasets/nba/
+Using existing file nba.csv
+Using existing file nba_relationship.txt
+Using existing file nba.embedding
+Loading nba dataset from /gpfs/home5/igardner/DIG_FACT/examples/fairgraph/Graphair/dataset/nba/nba.csv
+Traceback (most recent call last):
+  File "run_graphair_nba.py", line 11, in <module>
+    run_fairgraph.run(device,dataset=nba,model='Graphair',epochs=100,test_epochs=100,
+TypeError: run() got an unexpected keyword argument 'search'
+srun: error: gcn25: task 0: Exited with exit code 1
+srun: Terminating StepId=4881343.0
+
+JOB STATISTICS
+==============
+Job ID: 4881343
+Cluster: snellius
+User/Group: igardner/igardner
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:04:30 core-walltime
+Job Wall-clock time: 00:00:15
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

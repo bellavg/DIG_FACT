@@ -1,0 +1,99 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius+and+Lisa#SoftwarepolicySnelliusandLisa-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+Collecting torch_geometric
+  Downloading torch_geometric-2.4.0-py3-none-any.whl.metadata (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.9/63.9 kB 8.3 MB/s eta 0:00:00
+Requirement already satisfied: tqdm in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (4.66.1)
+Requirement already satisfied: numpy in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (1.24.3)
+Requirement already satisfied: scipy in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (1.10.1)
+Requirement already satisfied: jinja2 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (3.1.3)
+Requirement already satisfied: requests in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (2.31.0)
+Requirement already satisfied: pyparsing in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (3.1.1)
+Requirement already satisfied: scikit-learn in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_geometric) (1.3.2)
+Collecting psutil>=5.8.0 (from torch_geometric)
+  Downloading psutil-5.9.7-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (21 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from jinja2->torch_geometric) (2.1.3)
+Requirement already satisfied: charset-normalizer<4,>=2 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from requests->torch_geometric) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from requests->torch_geometric) (3.6)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from requests->torch_geometric) (2.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from requests->torch_geometric) (2023.11.17)
+Requirement already satisfied: joblib>=1.1.1 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from scikit-learn->torch_geometric) (1.3.2)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from scikit-learn->torch_geometric) (3.2.0)
+Downloading torch_geometric-2.4.0-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 90.3 MB/s eta 0:00:00
+Downloading psutil-5.9.7-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (285 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 285.5/285.5 kB 48.8 MB/s eta 0:00:00
+Installing collected packages: psutil, torch_geometric
+Successfully installed psutil-5.9.7 torch_geometric-2.4.0
+Collecting torch_scatter
+  Using cached torch_scatter-2.1.2-cp38-cp38-linux_x86_64.whl
+Installing collected packages: torch_scatter
+Successfully installed torch_scatter-2.1.2
+Collecting torch_sparse
+  Using cached torch_sparse-0.6.18-cp38-cp38-linux_x86_64.whl
+Requirement already satisfied: scipy in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_sparse) (1.10.1)
+Requirement already satisfied: numpy<1.27.0,>=1.19.5 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from scipy->torch_sparse) (1.24.3)
+Installing collected packages: torch_sparse
+Successfully installed torch_sparse-0.6.18
+Collecting torch_cluster
+  Using cached torch_cluster-1.6.3.tar.gz (54 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: scipy in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from torch_cluster) (1.10.1)
+Requirement already satisfied: numpy<1.27.0,>=1.19.5 in /gpfs/home5/igardner/thesis/env/fact_env/lib/python3.8/site-packages (from scipy->torch_cluster) (1.24.3)
+Building wheels for collected packages: torch_cluster
+  Building wheel for torch_cluster (setup.py): started
+  Building wheel for torch_cluster (setup.py): still running...
+  Building wheel for torch_cluster (setup.py): still running...
+  Building wheel for torch_cluster (setup.py): still running...
+  Building wheel for torch_cluster (setup.py): still running...
+  Building wheel for torch_cluster (setup.py): still running...
+  Building wheel for torch_cluster (setup.py): still running...
+  Building wheel for torch_cluster (setup.py): finished with status 'done'
+  Created wheel for torch_cluster: filename=torch_cluster-1.6.3-cp38-cp38-linux_x86_64.whl size=702475 sha256=b5b1267ceffa589902f9e97721c1fd2d9c7cf2ebafa74f859a11baa5db66b6df
+  Stored in directory: /gpfs/home5/igardner/.cache/pip/wheels/83/ae/16/6e083c8e0651c589dba0257e7d82c6a142ee63cca2f9f41d2d
+Successfully built torch_cluster
+Installing collected packages: torch_cluster
+Successfully installed torch_cluster-1.6.3
+Collecting torch_spline-conv
+  Using cached torch_spline_conv-1.2.2.tar.gz (25 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Building wheels for collected packages: torch_spline-conv
+  Building wheel for torch_spline-conv (setup.py): started
+  Building wheel for torch_spline-conv (setup.py): still running...
+  Building wheel for torch_spline-conv (setup.py): still running...
+  Building wheel for torch_spline-conv (setup.py): finished with status 'done'
+  Created wheel for torch_spline-conv: filename=torch_spline_conv-1.2.2-cp38-cp38-linux_x86_64.whl size=199421 sha256=ba98fa382b2f0f4ce964f5b96685b1b08360c3af8ec4c835c09464978d100452
+  Stored in directory: /gpfs/home5/igardner/.cache/pip/wheels/f0/50/90/8770582a575fe682ef43acb3bb2ca3906c7a88b02096935aa3
+Successfully built torch_spline-conv
+Installing collected packages: torch_spline-conv
+Successfully installed torch_spline-conv-1.2.2
+
+JOB STATISTICS
+==============
+Job ID: 4854566
+Cluster: snellius
+User/Group: igardner/igardner
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 03:10:12 core-walltime
+Job Wall-clock time: 00:10:34
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
