@@ -281,9 +281,9 @@ class Congress():
     :type root: str, optional
     '''
 
-    def __init__(self, data_path='./benchmark_dataset/', root='./dataset/cng', sens_attr="gender_feat"):
+    def __init__(self, data_path='./benchmark_dataset/',  sens_attr="gender_feat"):
         self.name = "CNG"
-        self.root = root
+
         self.dataset = 'cng'
         self.sens_attr = sens_attr
         self.predict_attr = "class_net_worth"
