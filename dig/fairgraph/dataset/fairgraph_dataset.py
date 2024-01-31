@@ -289,7 +289,7 @@ class Congress():
         self.predict_attr = "class_net_worth"
         self.label_number = 100
         self.seed = 20
-        self.test_idx = False
+        self.test_idx = True
         self.data_path = data_path
         self.process()
 

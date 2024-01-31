@@ -75,6 +75,18 @@ class run():
         adj = dataset.adj
         idx_sens = dataset.idx_sens_train
 
+        if dataset.name == "CNG":
+            pass
+        elif dataset.name == "NBA":
+            #alpha': 10.1, 'gamma': 5.1, 'lambda': 4.6
+            alpha = 10
+            lama = 5
+            gamma = 5
+        else:
+            alpha = 10
+            lama = 0.5
+            gamma = 0.5
+
         # generate model
         if model == 'Graphair':
             aug_model = aug_module(features, n_hidden=64, temperature=1).to(device)
@@ -84,7 +96,7 @@ class run():
             classifier_model = Classifier(input_dim=64, hidden_dim=128)
             model = graphair(aug_model=aug_model, f_encoder=f_encoder, sens_model=sens_model,
                              classifier_model=classifier_model, lr=lr, weight_decay=weight_decay,
-                             dataset=dataset_name, alpha=1, beta=1, gamma=0.7, lam=1).to(device)
+                             dataset=dataset_name, alpha=alpha, beta=1, gamma=gamma, lam=lama).to(device)
         else:
             raise Exception('At this moment, only Graphair is supported!')
 
