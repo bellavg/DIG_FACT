@@ -76,7 +76,9 @@ class run():
         idx_sens = dataset.idx_sens_train
 
         if dataset.name == "CNG":
-            pass
+            alpha = 10
+            lama = 0.5 #change with hpo results
+            gamma = 0.5
         elif dataset.name == "NBA":
             #alpha': 10.1, 'gamma': 5.1, 'lambda': 4.6
             alpha = 10
@@ -130,6 +132,6 @@ if __name__ == '__main__':
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     run_fairgraph = run()
-
+    dataset = Congress()
     run_fairgraph.run(device, dataset=dataset, model='Graphair', epochs=1000, test_epochs=1000,
                       lr=1e-3, weight_decay=1e-5)

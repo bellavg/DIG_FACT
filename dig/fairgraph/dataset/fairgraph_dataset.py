@@ -288,7 +288,7 @@ class Congress():
         self.dataset = 'cng'
         self.sens_attr = sens_attr
         self.predict_attr = "class_net_worth"
-        self.label_number = 100
+        self.label_number = 150
         self.seed = 20
         self.test_idx = True
         self.data_path = data_path
