@@ -272,7 +272,7 @@ class NBA():
         self.adj = adj
 
 
-class Congress():
+class CNG():
     '''
     Congress dataset class for handling data operations.
 

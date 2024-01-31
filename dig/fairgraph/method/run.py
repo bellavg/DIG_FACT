@@ -1,6 +1,6 @@
 from dig.fairgraph.method.Graphair.aug_module import *
 from dig.fairgraph.method.Graphair.classifier import Classifier
-from dig.fairgraph.dataset import POKEC, NBA, Congress
+from dig.fairgraph.dataset import POKEC, NBA, CNG
 from dig.fairgraph.method.Graphair.graphair import graphair
 from dig.fairgraph.method.Graphair.GCN import GCN, GCN_Body
 import torch
@@ -10,7 +10,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Run Graphair model with HPO")
-    parser.add_argument('--dataset', type=str, default='NBA', choices=['NBA', 'POKEC', 'Congress'],
+    parser.add_argument('--dataset', type=str, default='NBA', choices=['NBA', 'POKEC', 'CNG'],
                         help='Dataset to use for training and evaluation.')
     parser.add_argument('--sens_att', type=str, default=None,
                         help='For Congress which attribute to focus on')
@@ -122,16 +122,15 @@ if __name__ == '__main__':
         dataset = NBA()
     elif args.dataset == 'POKEC':
         dataset = POKEC()
-    elif args.dataset == 'Congress':
+    elif args.dataset == 'CNG':
         if args.sens_att:
-            dataset = Congress(sens_attr=args.sens_att)
+            dataset = CNG(sens_attr=args.sens_att)
         else:
-            dataset = Congress()
+            dataset = CNG()
     else:
         raise ValueError("Unsupported dataset")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     run_fairgraph = run()
-    dataset = Congress()
     run_fairgraph.run(device, dataset=dataset, model='Graphair', epochs=1000, test_epochs=1000,
                       lr=1e-3, weight_decay=1e-5)
