@@ -9,4 +9,4 @@ nba = NBA()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 run_fairgraph = run()
 run_fairgraph.run(device,dataset=nba,model='Graphair',epochs=100,test_epochs=100,
-            lr=1e-4,weight_decay=1e-5, search=True)
+            lr=1e-4,weight_decay=1e-5)

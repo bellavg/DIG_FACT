@@ -1,0 +1,63 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius+and+Lisa#SoftwarepolicySnelliusandLisa-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+Collecting package metadata (repodata.json): ...working... WARNING conda.models.version:get_matcher(535): Using .* with relational operator is superfluous and deprecated and will be removed in a future version of conda. Your spec was 1.7.1.*, but conda is ignoring the .* and treating it as 1.7.1
+WARNING conda.models.version:get_matcher(535): Using .* with relational operator is superfluous and deprecated and will be removed in a future version of conda. Your spec was 1.9.0.*, but conda is ignoring the .* and treating it as 1.9.0
+WARNING conda.models.version:get_matcher(535): Using .* with relational operator is superfluous and deprecated and will be removed in a future version of conda. Your spec was 1.8.0.*, but conda is ignoring the .* and treating it as 1.8.0
+WARNING conda.models.version:get_matcher(535): Using .* with relational operator is superfluous and deprecated and will be removed in a future version of conda. Your spec was 1.6.0.*, but conda is ignoring the .* and treating it as 1.6.0
+done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.12.0
+  latest version: 23.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... By downloading and using the CUDA Toolkit conda packages, you accept the terms and conditions of the CUDA End User License Agreement (EULA): https://docs.nvidia.com/cuda/eula/index.html
+
+done
+Installing pip dependencies: ...working... Pip subprocess error:
+ERROR: Invalid requirement: 'torch torchvision torchaudio' (from line 2 of /gpfs/home5/igardner/DIG_FACT/docs/condaenv.h9jerzi5.requirements.txt)
+
+Ran pip subprocess with arguments:
+['/gpfs/home5/igardner/thesis/env/dig/bin/python', '-m', 'pip', 'install', '-U', '-r', '/gpfs/home5/igardner/DIG_FACT/docs/condaenv.h9jerzi5.requirements.txt']
+Pip subprocess output:
+
+failed
+
+CondaEnvException: Pip failed
+
+
+JOB STATISTICS
+==============
+Job ID: 4854644
+Cluster: snellius
+User/Group: igardner/igardner
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 07:19:12 core-walltime
+Job Wall-clock time: 00:24:24
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/igardner/DIG_FACT/dig/./fairgraph/method/run.py", line 1, in <module>
+srun: error: gcn52: task 0: Exited with exit code 1
+srun: Terminating StepId=4832655.0
+    from .Graphair import graphair, aug_module, GCN, GCN_Body, Classifier
+ImportError: attempted relative import with no known parent package
+
+JOB STATISTICS
+==============
+Job ID: 4832655
+Cluster: snellius
+User/Group: igardner/igardner
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:03:00 core-walltime
+Job Wall-clock time: 00:00:10
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
