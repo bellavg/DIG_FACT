@@ -106,8 +106,7 @@ class run():
         model.fit_whole(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=50, adv_epoches=1)
         print("Training time: ", time.time() - st_time)
         st_time = time.time()
-        model.fit_batch(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=50, adv_epoches=1)
-        print("Training time: ", time.time() - st_time)
+
 
         # Test script
         model.test(adj=adj, features=features, labels=dataset.labels, epochs=test_epochs, idx_train=dataset.idx_train,

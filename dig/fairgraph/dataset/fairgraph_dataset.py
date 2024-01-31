@@ -260,13 +260,13 @@ class NBA():
         labels[labels>1]=1
         sens[sens>0]=1
 
-        self.features = features.cuda()
-        self.labels = labels.cuda()
-        self.idx_train = idx_train.cuda()
-        self.idx_val = idx_val.cuda()
-        self.idx_test = idx_test.cuda()
-        self.sens = sens.cuda()
-        self.idx_sens_train = idx_sens_train.long().cuda()
+        self.features = features
+        self.labels = labels
+        self.idx_train = idx_train
+        self.idx_val = idx_val
+        self.idx_test = idx_test
+        self.sens = sens
+        self.idx_sens_train = idx_sens_train.long()
 
         self.adj = adj
 
@@ -281,7 +281,7 @@ class Congress():
     :param root: The path to root directory where the dataset is processed and saved, defaults to './dataset/cng'
     :type root: str, optional
     '''
-    def __init__(self, data_path='benchmark_dataset/', root='./dataset/cng', sens_attr="gender_feat"):
+    def __init__(self, data_path='/Users/bellavg/PycharmProjects/DIG_FACT/dig/fairgraph/dataset/benchmark_dataset/', root='./dataset/cng', sens_attr="gender_feat"):
         self.name = "CNG"
         self.root = root
         self.dataset = 'cng'
@@ -368,25 +368,31 @@ class Congress():
 
         return adj, features, labels, idx_train, idx_val, idx_test, sens, idx_sens_train
 
-    def feature_norm(self, features):
+    def feature_norm(self,features):
+        min_values = features.min(axis=0)[0]
+        max_values = features.max(axis=0)[0]
 
-        # Assuming 'features' is your tensor
-        # Identify the index of the non-binary column, which appears to be index 1
-        non_binary_index = 1
+        return 2*(features - min_values).div(max_values-min_values) - 1
 
-        # Extract the non-binary column
-        non_binary_column = features[:, non_binary_index]
-
-        # Calculate the min and max values of the non-binary column
-        min_value = non_binary_column.min()
-        max_value = non_binary_column.max()
-
-        # Normalize the non-binary column
-        normalized_column = (non_binary_column - min_value) / (max_value - min_value)
-
-        # Replace the original non-binary column with the normalized one
-        features[:, non_binary_index] = normalized_column
-        return features
+    # def feature_norm(self, features):
+    #
+    #     # Assuming 'features' is your tensor
+    #     # Identify the index of the non-binary column, which appears to be index 1
+    #     non_binary_index = 1
+    #
+    #     # Extract the non-binary column
+    #     non_binary_column = features[:, non_binary_index]
+    #
+    #     # Calculate the min and max values of the non-binary column
+    #     min_value = non_binary_column.min()
+    #     max_value = non_binary_column.max()
+    #
+    #     # Normalize the non-binary column
+    #     normalized_column = (non_binary_column - min_value) / (max_value - min_value)
+    #
+    #     # Replace the original non-binary column with the normalized one
+    #     features[:, non_binary_index] = normalized_column
+    #     return features
 
     def process(self):
         # Main processing function
