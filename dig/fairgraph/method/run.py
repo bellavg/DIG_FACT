@@ -99,6 +99,17 @@ class run():
                          alpha=alpha, gamma=gamma, lam=lam,
                          dataset=dataset_name).to(device)
 
+        if dataset_name == 'POKEC':
+            # call fit_batch
+            st_time = time.time()
+            model.fit_batch(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=50, adv_epoches=1)
+            print("Training time: ", time.time() - st_time)
+        else:
+            # call fit_whole
+            st_time = time.time()
+            model.fit_whole(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=50, adv_epoches=1)
+            print("Training time: ", time.time() - st_time)
+
         # call fit_whole
         st_time = time.time()
         model.fit_whole(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=0,
@@ -121,8 +132,8 @@ if __name__ == '__main__':
         run_fair = run()
         return hpo(trial, args.dataset, run_fair)
 
-    study = optuna.create_study(direction='maximize')
-    study.optimize(objective, n_trials=500, sampler=optuna.samplers.RandomSample)
+    study = optuna.create_study(direction='maximize', sampler=optuna.samplers.RandomSampler)
+    study.optimize(objective, n_trials=500)
 
     # After optimization, save the study object
     with open(f'{args.dataset.lower()}_hpo_study.pkl', 'wb') as f:
