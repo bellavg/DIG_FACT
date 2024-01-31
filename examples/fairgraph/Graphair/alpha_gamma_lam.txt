@@ -1,0 +1,80 @@
+Avg results: acc: 0.5596 std: 0.0254 dp: 0.0450 std: 0.0423 eo: 0.0429 std: 0.0278
+alpha = 0.1, gamma = 0.1, lambda = 0.1
+
+Avg results: acc: 0.6075 std: 0.0064 dp: 0.0979 std: 0.0146 eo: 0.1207 std: 0.0474
+alpha = 0.1, gamma = 0.1, lambda = 1
+
+Avg results: acc: 0.5822 std: 0.0142 dp: 0.1274 std: 0.0312 eo: 0.1282 std: 0.0095
+alpha = 0.1, gamma = 0.1, lambda = 10
+
+Avg results: acc: 0.5831 std: 0.0069 dp: 0.1347 std: 0.0104 eo: 0.1369 std: 0.0234
+alpha = 0.1, gamma = 1, lambda = 0.1
+
+Avg results: acc: 0.5737 std: 0.0091 dp: 0.1048 std: 0.0058 eo: 0.0921 std: 0.0293
+alpha = 0.1, gamma = 1, lambda = 1
+
+Avg results: acc: 0.5690 std: 0.0046 dp: 0.1089 std: 0.0110 eo: 0.1010 std: 0.0324
+alpha = 0.1, gamma = 1, lambda = 10
+
+Avg results: acc: 0.5859 std: 0.0035 dp: 0.1161 std: 0.0062 eo: 0.1016 std: 0.0130
+alpha = 0.1, gamma = 10, lambda = 0.1
+
+Avg results: acc: 0.6028 std: 0.0159 dp: 0.0972 std: 0.0170 eo: 0.1068 std: 0.0237
+alpha = 0.1, gamma = 10, lambda = 1
+
+Avg results: acc: 0.6113 std: 0.0161 dp: 0.0824 std: 0.0214 eo: 0.0830 std: 0.0311
+alpha = 0.1, gamma = 10, lambda = 10
+
+Avg results: acc: 0.6160 std: 0.0161 dp: 0.0359 std: 0.0217 eo: 0.0231 std: 0.0237
+alpha = 1, gamma = 0.1, lambda = 0.1
+
+Avg results: acc: 0.6235 std: 0.0100 dp: 0.0177 std: 0.0133 eo: 0.0127 std: 0.0102
+alpha = 1, gamma = 0.1, lambda = 1
+
+Avg results: acc: 0.6244 std: 0.0030 dp: 0.0306 std: 0.0181 eo: 0.0157 std: 0.0116
+alpha = 1, gamma = 0.1, lambda = 10
+
+Avg results: acc: 0.6216 std: 0.0070 dp: 0.0655 std: 0.0300 eo: 0.0435 std: 0.0181
+alpha = 1, gamma = 1, lambda = 0.1
+
+Avg results: acc: 0.6150 std: 0.0042 dp: 0.0616 std: 0.0059 eo: 0.0106 std: 0.0090
+alpha = 1, gamma = 1, lambda = 1
+
+Avg results: acc: 0.6141 std: 0.0081 dp: 0.0577 std: 0.0134 eo: 0.0176 std: 0.0094
+alpha = 1, gamma = 1, lambda = 10
+
+Avg results: acc: 0.6019 std: 0.0035 dp: 0.0335 std: 0.0076 eo: 0.0263 std: 0.0161
+alpha = 1, gamma = 10, lambda = 0.1
+
+Avg results: acc: 0.5972 std: 0.0035 dp: 0.0337 std: 0.0095 eo: 0.0262 std: 0.0163
+alpha = 1, gamma = 10, lambda = 1
+
+Avg results: acc: 0.6075 std: 0.0038 dp: 0.0292 std: 0.0064 eo: 0.0065 std: 0.0007
+alpha = 1, gamma = 10, lambda = 10
+
+Avg results: acc: 0.6122 std: 0.0056 dp: 0.0195 std: 0.0091 eo: 0.0062 std: 0.0008
+alpha = 10, gamma = 0.1, lambda = 0.1
+
+Avg results: acc: 0.5991 std: 0.0056 dp: 0.0320 std: 0.0099 eo: 0.0220 std: 0.0096
+alpha = 10, gamma = 0.1, lambda = 1
+
+Avg results: acc: 0.5878 std: 0.0069 dp: 0.0284 std: 0.0059 eo: 0.0244 std: 0.0059
+alpha = 10, gamma = 0.1, lambda = 10
+
+Avg results: acc: 0.5746 std: 0.0110 dp: 0.0269 std: 0.0122 eo: 0.0269 std: 0.0048
+alpha = 10, gamma = 1, lambda = 0.1
+
+Avg results: acc: 0.5822 std: 0.0094 dp: 0.0300 std: 0.0143 eo: 0.0185 std: 0.0000
+alpha = 10, gamma = 1, lambda = 1
+
+Avg results: acc: 0.5972 std: 0.0091 dp: 0.0412 std: 0.0144 eo: 0.0478 std: 0.0244
+alpha = 10, gamma = 1, lambda = 10
+
+Avg results: acc: 0.6028 std: 0.0038 dp: 0.0549 std: 0.0114 eo: 0.0451 std: 0.0120
+alpha = 10, gamma = 10, lambda = 0.1
+
+Avg results: acc: 0.5906 std: 0.0035 dp: 0.0297 std: 0.0083 eo: 0.0255 std: 0.0102
+alpha = 10, gamma = 10, lambda = 1
+
+Avg results: acc: 0.5887 std: 0.0038 dp: 0.0213 std: 0.0032 eo: 0.0306 std: 0.0002
+alpha = 10, gamma = 10, lambda = 10
