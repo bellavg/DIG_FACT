@@ -260,13 +260,14 @@ class NBA():
         labels[labels>1]=1
         sens[sens>0]=1
 
-        self.features = features
-        self.labels = labels
-        self.idx_train = idx_train
-        self.idx_val = idx_val
-        self.idx_test = idx_test
-        self.sens = sens
-        self.idx_sens_train = idx_sens_train.long()
+        self.features = features.cuda()
+        self.labels = labels.cuda()
+        self.idx_train = idx_train.cuda()
+        self.idx_val = idx_val.cuda()
+        self.idx_test = idx_test.cuda()
+        self.sens = sens.cuda()
+        self.idx_sens_train = idx_sens_train.long().cuda()
+
 
         self.adj = adj
 
