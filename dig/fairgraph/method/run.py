@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 from dig.fairgraph.method.Graphair.aug_module import *
 from dig.fairgraph.method.Graphair.classifier import Classifier
-=======
-from dig.fairgraph.method.Graphair import graphair, aug_module, GCN, GCN_Body, Classifier
->>>>>>> b3c290d53a375d39f8f0ed19e9e77413e78100e8
 from dig.fairgraph.dataset import POKEC, NBA
 from dig.fairgraph.method.Graphair.graphair import graphair
 from dig.fairgraph.method.Graphair.GCN import GCN, GCN_Body
@@ -100,40 +96,35 @@ class run():
                                 idx_val=dataset.idx_val, idx_test=dataset.idx_test, sens=sens)
                         print(f'alpha = {alpha}, gamma = {gamma}, lambda = {lam}')
 
-<<<<<<< HEAD
         else:    
 
-        # generate model
-        if model == 'Graphair':
-            aug_model = aug_module(features, n_hidden=64, temperature=1).to(device)
-            f_encoder = GCN_Body(in_feats=features.shape[1], n_hidden=64, out_feats=64, dropout=0.1, nlayer=3).to(
-                device)
-            sens_model = GCN(in_feats=features.shape[1], n_hidden=64, out_feats=64, nclass=1).to(device)
-            print("with hidden dim 128")
-            classifier_model = Classifier(input_dim=64, hidden_dim=128)
-            model = graphair(aug_model=aug_model, f_encoder=f_encoder, sens_model=sens_model,
-                             classifier_model=classifier_model, lr=lr, weight_decay=weight_decay,
-                             dataset=dataset_name).to(device)
-        else:
-            raise Exception('At this moment, only Graphair is supported!')
+            # generate model
+            if model == 'Graphair':
+                aug_model = aug_module(features, n_hidden=64, temperature=1).to(device)
+                f_encoder = GCN_Body(in_feats=features.shape[1], n_hidden=64, out_feats=64, dropout=0.1, nlayer=3).to(
+                    device)
+                sens_model = GCN(in_feats=features.shape[1], n_hidden=64, out_feats=64, nclass=1).to(device)
+                print("with hidden dim 128")
+                classifier_model = Classifier(input_dim=64, hidden_dim=128)
+                model = graphair(aug_model=aug_model, f_encoder=f_encoder, sens_model=sens_model,
+                                classifier_model=classifier_model, lr=lr, weight_decay=weight_decay,
+                                dataset=dataset_name).to(device)
+            else:
+                raise Exception('At this moment, only Graphair is supported!')
 
-        # call fit_whole
-        st_time = time.time()
-        model.fit_whole(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=0, adv_epoches=1)
-        print("Training time: ", time.time() - st_time)
+            # call fit_whole
+            st_time = time.time()
+            model.fit_whole(epochs=epochs, adj=adj, x=features, sens=sens, idx_sens=idx_sens, warmup=0, adv_epoches=1)
+            print("Training time: ", time.time() - st_time)
 
-        # Test script
-        model.test(adj=adj, features=features, labels=dataset.labels, epochs=test_epochs, idx_train=dataset.idx_train,
-                   idx_val=dataset.idx_val, idx_test=dataset.idx_test, sens=sens)
+            # Test script
+            model.test(adj=adj, features=features, labels=dataset.labels, epochs=test_epochs, idx_train=dataset.idx_train,
+                    idx_val=dataset.idx_val, idx_test=dataset.idx_test, sens=sens)
 
-=======
-        
->>>>>>> b3c290d53a375d39f8f0ed19e9e77413e78100e8
 
 # Load the dataset
 nba = NBA()
 
-<<<<<<< HEAD
 # Load the dataset
 nba = NBA()
 
@@ -142,10 +133,3 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 run_fairgraph = run()
 run_fairgraph.run(device,dataset=nba,model='Graphair',epochs=500,test_epochs=500,
             lr=1e-3,weight_decay=1e-5)
-=======
-# Train and evaluate
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-run_fairgraph = run()
-run_fairgraph.run(device,dataset=nba,model='Graphair',epochs=100,test_epochs=100,
-            lr=1e-4,weight_decay=1e-5)
->>>>>>> b3c290d53a375d39f8f0ed19e9e77413e78100e8
