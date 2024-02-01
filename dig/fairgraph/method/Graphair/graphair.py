@@ -51,7 +51,7 @@ class graphair(nn.Module):
 
     '''
 
-    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-3, weight_decay=1e-5, alpha=1, beta=1,
+    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4, weight_decay=1e-5, alpha=1, beta=1,
                  gamma=0.1, lam=1, dataset='POKEC', num_hidden=64, num_proj_hidden=64):
         super(graphair, self).__init__()
         self.save_path = None
@@ -59,12 +59,11 @@ class graphair(nn.Module):
         self.f_encoder = f_encoder
         self.sens_model = sens_model
         self.classifier = classifier_model
-        self.alpha = 10
-        self.beta = 0.1
-        self.gamma = 0.1
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = gamma
         self.dataset = dataset
-        self.lam = 0.5
-        print("with email values")
+        self.lam = lam
 
         self.criterion_sens = nn.BCEWithLogitsLoss()
         self.criterion_cont = nn.CrossEntropyLoss()
@@ -82,7 +81,7 @@ class graphair(nn.Module):
         self.fc2 = torch.nn.Linear(num_proj_hidden, num_hidden)
 
         self.optimizer_classifier = torch.optim.Adam(self.classifier.parameters(),
-                                                     lr=lr, weight_decay=weight_decay)
+                                                     lr=1e-3, weight_decay=weight_decay)
 
     def projection(self, z):
         z = F.elu(self.fc1(z))
