@@ -204,8 +204,7 @@ class graphair(nn.Module):
                 loss.backward()
                 self.optimizer.step()
 
-                print(
-                    f'Epoch: {epoch_counter + 1:04d} sens loss: {senloss.item():.4f} contrastive loss: {contrastive_loss.item():.4f} edge reconstruction loss: {edge_loss.item():.4f} feature reconstruction loss: {feat_loss.item():.4f}\n')
+                
         self.save_path = "./checkpoint/graphair_{}_alpha{}_beta{}_gamma{}_lambda{}".format(self.dataset, self.alpha,
                                                                                            self.beta, self.gamma,
                                                                                            self.lam)
@@ -250,10 +249,7 @@ class graphair(nn.Module):
 
                     parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
                     parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
-                    if epoch % 10 == 0:
-                        print(
-                            f"Epoch [{epoch}] Test set results: acc_test= {acc_test.item():.4f} acc_val: {acc_val.item():.4f} dp_val: {parity_val:.4f} dp_test: {parity_test:.4f} eo_val: {equality_val:.4f} eo_test: {equality_test:.4f}\n")
-
+                    
                     if acc_val > best_acc:
                         best_acc = acc_val
                         best_test = acc_test
