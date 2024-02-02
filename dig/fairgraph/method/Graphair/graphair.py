@@ -131,6 +131,7 @@ class graphair(nn.Module):
         return self.f_encoder(adj, x)
 
     def fit_whole(self, epochs, adj, x, sens, idx_sens, warmup=None, adv_epoches=1):
+        print('HYPERPARAMETERS:     alpha', self.alpha, ', beta', self.beta, ', gamma', self.gamma, ', lam', self.lam)
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
