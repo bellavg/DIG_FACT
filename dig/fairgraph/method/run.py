@@ -1,6 +1,6 @@
 from dig.fairgraph.method.Graphair.aug_module import *
 from dig.fairgraph.method.Graphair.classifier import Classifier
-from dig.fairgraph.dataset import POKEC, NBA, CNG
+from dig.fairgraph.dataset import POKEC, NBA #, CNG
 from dig.fairgraph.method.Graphair.graphair import graphair
 from dig.fairgraph.method.Graphair.GCN import GCN, GCN_Body
 import torch
@@ -124,9 +124,9 @@ if __name__ == '__main__':
         dataset = POKEC()
     elif args.dataset == 'CNG':
         if args.sens_att:
-            dataset = CNG(sens_attr=args.sens_att)
+            dataset = 1#CNG(sens_attr=args.sens_att)
         else:
-            dataset = CNG()
+            dataset = 1#CNG()
     else:
         raise ValueError("Unsupported dataset")
 
